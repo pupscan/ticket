@@ -19,7 +19,7 @@
   }
 
   export default {
-    name: 'spark',
+    name: 'chart',
     components: {
       IEcharts
     },
@@ -33,10 +33,10 @@
         },
         grid: {
           left: '0%',
-          right: '0%',
+          right: '1%',
           bottom: '0%',
-          top: '0%',
-          containLabel: false
+          top: '3%',
+          containLabel: true
         },
         xAxis: {
           type: 'category',
@@ -48,7 +48,6 @@
             show: false
           },
           axisLabel: {
-            show: false,
             textStyle: {
               color: '#5c6061'
             }
@@ -74,7 +73,6 @@
             }
           },
           axisLabel: {
-            show: false,
             textStyle: {
               color: '#5c6061'
             }
@@ -82,9 +80,9 @@
         },
         series: [
           {
-            name: 'stats',
+            name: 'Funds',
             type: 'line',
-            smooth: false,
+            smooth: true,
             symbol: 'none',
             sampling: 'average',
             itemStyle: {
@@ -92,16 +90,23 @@
                 color: '#1ab394'
               }
             },
+            areaStyle: {
+              normal: {
+                color: convertHex('#1ab394', 50)
+              }
+            },
             data: [193, 138, 121, 54, 145, 106, 126, 59, 135, 166, 105, 125, 89, 128, 113, 102, 103, 196, 61, 130, 99, 56, 98, 137, 139, 83, 189, 106]
           }
         ]
       }
-    })
+    }),
+    mounted () {
+    }
   }
 </script>
 
 <style lang="scss" scoped>
     .echarts {
-        height: 50px;
+        height: 200px;
     }
 </style>
