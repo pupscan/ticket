@@ -31,7 +31,6 @@ Hot reloading, developpement server, minification, uglification, scss compilatio
 * [font-awesome](http://fontawesome.io) for icons
 * [Axios](https://github.com/mzabriskie/axios) for http resources
 * [Vuex](https://github.com/vuejs/vuex) for centralized state management using flux pattern all the explanation [here](https://vuex.vuejs.org/en/)
-* [Vue-router](https://github.com/vuejs/vue-router/)
 * Docker for deployement
 * [http-server](https://github.com/indexzero/http-server) fast/easy http server for production
 
@@ -46,7 +45,6 @@ Hot reloading, developpement server, minification, uglification, scss compilatio
 * `./src` all your VueJs files.
 * `./src/api` all your call to your external API manage with Axios
 * `./src/store` your Vuex centralized state management will store all your application data
-* `./src/router` your router to manage pages, all your page will be load on start of application: see `render: h => h('router-view')` in `main.js` file
 * To see what looks your project in production mode run `yarn build`. It will generate aggregate minified file: css, javascripts.
 
 ## Deploy your application in production with Docker

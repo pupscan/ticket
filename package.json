@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "lodash": "^4.17.4",
     "vue": "^2.4.1",
-    "vuex": "^2.3.1",
-    "vue-router": "^2.7.0"
+    "vue-router": "^2.7.0",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "node-sass": "^4.5.3",
@@ -23,6 +24,9 @@
   },
   "xo": {
     "semicolon": false,
-    "space": true
+    "space": true,
+    "rules": {
+      "no-return-assign": 0
+    }
   }
 }

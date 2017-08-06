@@ -1,5 +1,5 @@
 import http from './http'
 
 export default {
-  myRequest: () => http.get('/get').then(response => response.data)
+  client: clientId => http.get('/clients/client/' + clientId).then(response => response.data),
 }
