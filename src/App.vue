@@ -7,10 +7,8 @@
                         <box></box>
                     </div>
                     <div class="col-sm-4">
-                        <box></box>
                     </div>
                     <div class="col-sm-4">
-                        <box></box>
                     </div>
                 </div>
                 <div class="row  m-b-xl">

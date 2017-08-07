@@ -1,25 +1,16 @@
 <template>
     <div>
         <h1 class="m-b-xs">
-            26,900
+            {{ all.total }}
         </h1>
         <small>
-            Sales in current month
+            New tickets in current week
         </small>
-        <spark></spark>
+        <spark :data="last30days"></spark>
         <div class="row">
             <div class="col-xs-4">
-                <small class="stats-label">Pages / Visit</small>
-                <h4>236 321.80</h4>
-            </div>
-
-            <div class="col-xs-4">
-                <small class="stats-label">% New Visits</small>
-                <h4>46.11%</h4>
-            </div>
-            <div class="col-xs-4">
-                <small class="stats-label">Last week</small>
-                <h4>432.021</h4>
+                <small class="stats-label">Trend</small>
+                <h4>{{ all.trend | number(0) }} % </h4>
             </div>
         </div>
     </div>
@@ -27,11 +18,22 @@
 
 <script>
   import Spark from './Spark.vue'
+  import {mapGetters} from 'vuex'
 
   export default {
     name: 'box',
     components: {
       Spark
+    },
+    computed: {
+      ...mapGetters({
+        status: 'ticketsStatus',
+        all: 'ticketsTrend',
+        last30days: 'ticketsLast30days'
+      })
+    },
+    created() {
+      this.$store.dispatch('fetchTickets')
     }
   }
 </script>
