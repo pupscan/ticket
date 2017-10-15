@@ -1,14 +1,17 @@
+ta
 <template>
     <div id="wrapper">
         <div id="page-wrapper" class="gray-bg">
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row  m-b-xl">
                     <div class="col-sm-4">
-                        <box></box>
+                        <new-ticket-box></new-ticket-box>
                     </div>
                     <div class="col-sm-4">
+                        <happy-ticket-box></happy-ticket-box>
                     </div>
                     <div class="col-sm-4">
+                        <unhappy-ticket-box></unhappy-ticket-box>
                     </div>
                 </div>
                 <div class="row  m-b-xl">
@@ -27,16 +30,20 @@
 </template>
 
 <script>
-  import Box from './components/Box.vue'
-  import Chart from './components/Chart.vue'
-  import Tickets from './components/Tickets.vue'
+    import NewTicketBox from './components/NewTicketBox'
+    import HappyTicketBox from './components/HappyTicketBox'
+    import UnhappyTicketBox from './components/UnhappyTicketBox'
+    import Chart from './components/generics/Chart.vue'
+    import Tickets from './components/generics/Tickets.vue'
 
-  export default {
-    name: 'app',
-    components: {
-      Box,
-      Chart,
-      Tickets
+    export default {
+        name: 'app',
+        components: {
+            NewTicketBox,
+            HappyTicketBox,
+            UnhappyTicketBox,
+            Chart,
+            Tickets
+        }
     }
-  }
 </script>

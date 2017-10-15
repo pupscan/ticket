@@ -190,6 +190,6 @@
 </template>
 <script>
 export default {
-  name: 'tickets'
+  name: 'newTickets'
 }
 </script>

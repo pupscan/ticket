@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: 'login'
+    name: 'p404'
   }
 </script>
 
