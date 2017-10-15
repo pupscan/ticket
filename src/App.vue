@@ -16,7 +16,7 @@ ta
                 </div>
                 <div class="row  m-b-xl">
                     <div class="col-sm-12">
-                        <chart></chart>
+                        <ticket-chart></ticket-chart>
                     </div>
                 </div>
                 <div class="row  m-b-xl">
@@ -33,8 +33,8 @@ ta
     import NewTicketBox from './components/NewTicketBox'
     import HappyTicketBox from './components/HappyTicketBox'
     import UnhappyTicketBox from './components/UnhappyTicketBox'
-    import Chart from './components/generics/Chart.vue'
-    import Tickets from './components/generics/Tickets.vue'
+    import TicketChart from './components/TicketChart'
+    import Tickets from './components/Tickets.vue'
 
     export default {
         name: 'app',
@@ -42,8 +42,9 @@ ta
             NewTicketBox,
             HappyTicketBox,
             UnhappyTicketBox,
-            Chart,
-            Tickets
+            TicketChart,
+            Tickets,
         }
     }
 </script>
+

@@ -20,6 +20,7 @@
 
     export default {
         name: 'chart',
+        props: ['data', 'labels', 'status'],
         components: {
             IEcharts
         },
@@ -27,6 +28,7 @@
             status: function (newVal) {
                 if (newVal === "loaded") {
                     this.option.series[0].data = this.data
+                    this.option.xAxis.data = this.labels
                 }
             }
         },
@@ -60,7 +62,7 @@
                             color: '#5c6061'
                         }
                     },
-                    data: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S']
+                    data: []
                 },
                 yAxis: {
                     splitNumber: 3,
@@ -88,7 +90,7 @@
                 },
                 series: [
                     {
-                        name: 'Funds',
+                        name: 'Tickets',
                         type: 'line',
                         smooth: true,
                         symbol: 'none',
@@ -103,13 +105,11 @@
                                 color: convertHex('#1ab394', 10)
                             }
                         },
-                        data: [193, 138, 121, 54, 145, 106, 126, 59, 135, 166, 105, 125, 89, 128, 113, 102, 103, 196, 61, 130, 99, 56, 98, 137, 139, 83, 189, 106]
+                        data: []
                     }
                 ]
             }
-        }),
-        mounted() {
-        }
+        })
     }
 </script>
 
