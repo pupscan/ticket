@@ -13,6 +13,7 @@ export default new VueRouter({
             path: '/',
             component: App,
             beforeEnter: (to, from, next) => {
+                console.log("entry")
                 if (auth.isLogged()) {
                     next()
                 } else {
@@ -22,7 +23,8 @@ export default new VueRouter({
                 }
             }
         },
-        {path: '/login', beforeEnter: () => window.location.href = 'https://portal.pupscan.com/login'}, // eslint-disable-line no-undef
+        {path: '/login', beforeEnter: () =>  window.location.href = 'https://portal.pupscan.com/login'}, // eslint-disable-line no-undef
+        {path: '/logout', beforeEnter: (to, from, next) => {auth.logout(); next('/login')}},
         {path: '*', component: p404}
     ]
 })
