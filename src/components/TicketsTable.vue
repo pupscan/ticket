@@ -21,13 +21,18 @@
                         {{ ticket.message }}
                     </div>
                 </td>
-                <td class="text-center" v-bind:title="ticket.status">
-                    <i class="fa" v-bind:class="{ 'fa-plus-circle': ticket.status === 'new',
-          'fa-trash': ticket.status === 'deleted', 'fa-remove ': ticket.status === 'closed',
-          'fa-spinner ': ticket.status === 'pending', 'fa-check-square ': ticket.status === 'solved'}"></i>
+                <td class="text-center" >
+                      <span class="label"
+                            :class="{
+                          'label-danger': (ticket.status==='pending' || ticket.status==='hold'),
+                          'label-primary': (ticket.status==='new'),
+                          'label-warning': (ticket.status==='open')}">
+                        {{ticket.status}}</span>
                 </td>
                 <td>
-                    <strong>{{ticket.tags}}</strong>
+                    <ul class="tag-list" style="padding: 0">
+                        <li v-for="tag in ticket.tags" class="tag"><i class="fa fa-tag"></i> {{tag}}</li>
+                    </ul>
                 </td>
                 <td>
                     <strong>{{ticket.created}}</strong>
@@ -58,3 +63,17 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    .tag {
+        font-size: 10px;
+        background-color: #f3f3f4;
+        padding: 5px 12px;
+        color: inherit;
+        border-radius: 2px;
+        border: 1px solid #e7eaec;
+        margin-right: 5px;
+        margin-top: 5px;
+        display: block;
+    }
+</style>
